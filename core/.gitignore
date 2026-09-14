@@ -1,0 +1,9 @@
+# Rust build artifacts
+target/
+
+# WASM build outputs
+pkg/
+
+# Backup and temp files
+**/*.rs.bk
+*.tmp
