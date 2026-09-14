@@ -1,0 +1,52 @@
+.chunkBox {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--liquid-glass-border);
+  margin-top: 10px;
+  background: var(--liquid-glass-card);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--liquid-glass-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.chunkBox:hover {
+  background: var(--liquid-glass-bg-hover);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.chunkHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.chunkKey {
+  font-weight: 700;
+  font-size: 0.88rem;
+  font-family: var(--liquid-font-mono);
+  color: #38bdf8;
+}
+
+[data-mantine-color-scheme='light'] .chunkKey {
+  color: #0284c7;
+}
+
+.chunkValue {
+  font-family: var(--liquid-font-mono);
+  font-size: 0.82rem;
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-height: 180px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  background: rgba(10, 15, 26, 0.75);
+  border: 1px solid var(--liquid-glass-border);
+  color: #e2e8f0;
+}
+
+[data-mantine-color-scheme='light'] .chunkValue {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+}

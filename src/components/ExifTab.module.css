@@ -1,0 +1,90 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--liquid-glass-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  background: var(--liquid-glass-bg-hover);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--liquid-text-dimmed);
+  font-family: var(--liquid-font-mono);
+  letter-spacing: 0.04em;
+}
+
+.value {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-top: 4px;
+  color: var(--liquid-text-primary);
+  font-family: var(--liquid-font-mono);
+}
+
+.mapCard {
+  background: var(--liquid-glass-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 149, 0, 0.25);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--liquid-glass-shadow-sm);
+}
+
+.mapContainer {
+  width: 100%;
+  height: 260px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--liquid-glass-border);
+  margin-top: 10px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.tableWrapper {
+  max-height: 320px;
+  overflow-y: auto;
+  border-radius: 14px;
+  border: 1px solid var(--liquid-glass-border);
+  background: rgba(10, 15, 26, 0.5);
+  backdrop-filter: blur(16px);
+}
+
+.tagName {
+  font-family: var(--liquid-font-mono);
+  color: #38bdf8;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+[data-mantine-color-scheme='light'] .tagName {
+  color: #0284c7;
+}
+
+.ifdBadge {
+  font-family: var(--liquid-font-mono);
+  color: var(--liquid-text-dimmed);
+  font-size: 0.75rem;
+}
+
+.tagValue {
+  font-family: var(--liquid-font-mono);
+  color: var(--liquid-text-primary);
+  font-size: 0.82rem;
+  word-break: break-all;
+}

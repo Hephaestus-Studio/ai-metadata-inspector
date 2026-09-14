@@ -113,7 +113,7 @@ pub struct ExifReport {
     pub camera_model: Option<String>,
     /// Lens model used to capture the image.
     pub lens_model: Option<String>,
-    /// Processing or capture software (e.g. "Adobe Photoshop", "iOS 17.4").
+    /// Processing or capture software (e.g. "Adobe Photoshop", "Capture One").
     pub software: Option<String>,
     /// Date and time when the photo was taken or digitized.
     pub date_time: Option<String>,

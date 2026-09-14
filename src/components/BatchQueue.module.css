@@ -1,0 +1,116 @@
+.batchBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 14px;
+  max-width: 1400px;
+  margin: 0 auto 20px auto;
+  background: var(--liquid-glass-card);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-top: 1.5px solid var(--liquid-glass-highlight);
+  border-left: 1px solid var(--liquid-glass-border);
+  border-right: 1px solid var(--liquid-glass-border);
+  border-bottom: 1px solid var(--liquid-glass-border-subtle);
+  border-radius: 9999px;
+  box-shadow: var(--liquid-glass-shadow-sm);
+}
+
+.chipsScrollArea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  min-width: 0;
+  flex: 1;
+  scrollbar-width: none;
+}
+
+.chipsScrollArea::-webkit-scrollbar {
+  display: none;
+}
+
+.itemCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px 4px 6px;
+  border-radius: 9999px;
+  background: var(--liquid-glass-subtle);
+  border: 1px solid var(--liquid-glass-border);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+}
+
+.itemCard:hover {
+  background: var(--liquid-glass-bg-hover);
+  border-color: var(--liquid-glass-border-hover);
+  transform: translateY(-1px);
+}
+
+.itemCardActive {
+  background: rgba(99, 102, 241, 0.18) !important;
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.3);
+}
+
+.thumbnailWrapper {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fileName {
+  font-size: 0.8rem;
+  font-weight: 600;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--liquid-text-primary);
+}
+
+.itemCardActive .fileName {
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.addMoreBtn {
+  border-radius: 9999px !important;
+  flex-shrink: 0 !important;
+  font-size: 0.75rem !important;
+}
+
+.batchCleanBtn {
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  background: var(--liquid-gradient-clean) !important;
+  box-shadow: 0 4px 14px rgba(52, 199, 89, 0.35) !important;
+  transition: all 0.2s ease !important;
+}
+
+.batchCleanBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(52, 199, 89, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+  .batchBar {
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: stretch;
+  }
+}

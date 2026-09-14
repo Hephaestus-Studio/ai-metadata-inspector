@@ -1,111 +1,363 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --liquid-font-sans:
+    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+    'Segoe UI', Roboto, sans-serif;
+  --liquid-font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* Global Neon & System Accents */
+  --liquid-cyan: #007aff;
+  --liquid-cyan-glow: #00f0ff;
+  --liquid-purple: #af52de;
+  --liquid-purple-glow: #c084fc;
+  --liquid-pink: #ff2d55;
+  --liquid-emerald: #34c759;
+  --liquid-emerald-glow: #10b981;
+  --liquid-amber: #ff9500;
+  --liquid-rose: #ff3b30;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --liquid-gradient-primary: linear-gradient(
+    135deg,
+    #007aff 0%,
+    #5856d6 50%,
+    #af52de 100%
+  );
+  --liquid-gradient-accent: linear-gradient(
+    135deg,
+    #ff2d55 0%,
+    #af52de 50%,
+    #007aff 100%
+  );
+  --liquid-gradient-clean: linear-gradient(135deg, #34c759 0%, #00c7be 100%);
+  --liquid-gradient-danger: linear-gradient(135deg, #ff3b30 0%, #ff2d55 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* =========================================================
+   1. LIGHT THEME (Pure Frost / Crystal Glass)
+   ========================================================= */
+[data-mantine-color-scheme='light'] {
+  --liquid-bg-base: #eef2f8;
+  --liquid-glass-bg: rgba(255, 255, 255, 0.65);
+  --liquid-glass-bg-hover: rgba(255, 255, 255, 0.85);
+  --liquid-glass-card: rgba(255, 255, 255, 0.55);
+  --liquid-glass-subtle: rgba(15, 23, 42, 0.05);
+  --liquid-glass-border: rgba(255, 255, 255, 0.8);
+  --liquid-glass-border-subtle: rgba(15, 23, 42, 0.1);
+  --liquid-glass-border-hover: rgba(0, 122, 255, 0.6);
+  --liquid-glass-border-active: #007aff;
+  --liquid-glass-highlight: rgba(255, 255, 255, 0.95);
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+  --liquid-text-primary: #0f172a;
+  --liquid-text-secondary: #334155;
+  --liquid-text-dimmed: #64748b;
+
+  --liquid-code-bg: rgba(255, 255, 255, 0.8);
+  --liquid-code-text: #0284c7;
+  --liquid-code-border: rgba(15, 23, 42, 0.1);
+
+  --liquid-glass-shadow:
+    0 20px 40px -10px rgba(15, 23, 42, 0.08),
+    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.03);
+
+  --liquid-glass-shadow-sm:
+    0 10px 24px -4px rgba(15, 23, 42, 0.06),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.95);
+
+  --liquid-glass-shadow-glow:
+    0 0 36px -4px rgba(0, 122, 255, 0.35),
+    0 20px 40px -8px rgba(15, 23, 42, 0.1),
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 1);
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+/* =========================================================
+   2. DARK THEME (Midnight Obsidian / Smoked Glass)
+   ========================================================= */
+[data-mantine-color-scheme='dark'] {
+  --liquid-bg-base: #090c15;
+  --liquid-glass-bg: rgba(20, 27, 45, 0.55);
+  --liquid-glass-bg-hover: rgba(30, 41, 65, 0.7);
+  --liquid-glass-card: rgba(255, 255, 255, 0.04);
+  --liquid-glass-subtle: rgba(255, 255, 255, 0.05);
+  --liquid-glass-border: rgba(255, 255, 255, 0.12);
+  --liquid-glass-border-subtle: rgba(255, 255, 255, 0.06);
+  --liquid-glass-border-hover: rgba(255, 255, 255, 0.3);
+  --liquid-glass-border-active: rgba(99, 102, 241, 0.8);
+  --liquid-glass-highlight: rgba(255, 255, 255, 0.35);
+
+  --liquid-text-primary: #f8fafc;
+  --liquid-text-secondary: #cbd5e1;
+  --liquid-text-dimmed: #94a3b8;
+
+  --liquid-code-bg: rgba(6, 11, 22, 0.85);
+  --liquid-code-text: #38bdf8;
+  --liquid-code-border: rgba(255, 255, 255, 0.15);
+
+  --liquid-glass-shadow:
+    0 24px 50px -12px rgba(0, 0, 0, 0.65), 0 8px 20px -4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.3);
+
+  --liquid-glass-shadow-sm:
+    0 10px 24px -5px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  --liquid-glass-shadow-glow:
+    0 0 35px -4px rgba(99, 102, 241, 0.3), 0 20px 50px -10px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.35);
+}
+
+* {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--liquid-font-sans);
+  background-color: var(--liquid-bg-base);
+  color: var(--liquid-text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.4s ease;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+@keyframes liquidMeshGlow {
+  0% {
+    filter: hue-rotate(0deg) scale(1);
+    transform: translateY(0);
+  }
+  50% {
+    filter: hue-rotate(12deg) scale(1.03);
+    transform: translateY(-8px);
+  }
+  100% {
+    filter: hue-rotate(-12deg) scale(1);
+    transform: translateY(0);
   }
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+
+/* Custom Liquid Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--liquid-cyan);
+  background-clip: padding-box;
+}
+
+/* Code and Mono Elements */
+pre,
 code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+kbd,
+samp {
+  font-family: var(--liquid-font-mono) !important;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* Keyframe Animations */
+@keyframes liquidFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-liquid-fade {
+  animation: liquidFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Mantine Global Overrides for Liquid Glass */
+.mantine-Modal-content {
+  background: var(--liquid-glass-bg) !important;
+  backdrop-filter: blur(32px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+  border: 1px solid var(--liquid-glass-border) !important;
+  box-shadow: var(--liquid-glass-shadow) !important;
+  border-radius: 26px !important;
+  color: var(--liquid-text-primary) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.mantine-Modal-header {
+  background: transparent !important;
+}
+
+.mantine-Notification-root {
+  background: var(--liquid-glass-bg) !important;
+  backdrop-filter: blur(24px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+  border: 1px solid var(--liquid-glass-border) !important;
+  box-shadow: var(--liquid-glass-shadow-sm) !important;
+  border-radius: 18px !important;
+}
+
+.mantine-Tabs-list {
+  border-bottom: none !important;
+  background: rgba(15, 23, 42, 0.65) !important;
+  padding: 5px !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--liquid-glass-border) !important;
+  gap: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  overflow-x: auto;
+}
+
+[data-mantine-color-scheme='light'] .mantine-Tabs-list {
+  background: rgba(241, 245, 249, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.mantine-Tabs-tab {
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  font-size: 0.86rem !important;
+  color: var(--liquid-text-dimmed) !important;
+  padding: 8px 16px !important;
+  border: 1px solid transparent !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+}
+
+.mantine-Tabs-tab:hover {
+  background: var(--liquid-glass-subtle) !important;
+  color: var(--liquid-text-primary) !important;
+  border-color: var(--liquid-glass-border-subtle) !important;
+}
+
+.mantine-Tabs-tab[data-active] {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.18),
+    rgba(56, 189, 248, 0.14)
+  ) !important;
+  border-color: rgba(99, 102, 241, 0.45) !important;
+  color: #a5b4fc !important;
+  box-shadow:
+    0 4px 16px -2px rgba(99, 102, 241, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25) !important;
+  font-weight: 700 !important;
+}
+
+/* Mantine Accordion Studio Glass Overrides */
+.mantine-Accordion-item {
+  background: var(--liquid-glass-card) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--liquid-glass-border) !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  transition: all 0.25s ease !important;
+  box-shadow: var(--liquid-glass-shadow-sm) !important;
+}
+
+.mantine-Accordion-item:hover {
+  border-color: var(--liquid-glass-border-hover) !important;
+}
+
+.mantine-Accordion-control {
+  background: transparent !important;
+  padding: 14px 18px !important;
+  border-radius: 18px !important;
+  transition: background 0.2s ease !important;
+}
+
+.mantine-Accordion-control:hover {
+  background: var(--liquid-glass-subtle) !important;
+}
+
+.mantine-Accordion-panel {
+  padding: 0 18px 18px 18px !important;
+}
+
+/* Mantine Input & Search Overrides */
+.mantine-TextInput-input,
+.mantine-Input-input {
+  background: rgba(10, 15, 26, 0.75) !important;
+  border: 1px solid var(--liquid-glass-border) !important;
+  border-radius: 12px !important;
+  color: var(--liquid-text-primary) !important;
+  font-size: 0.85rem !important;
+  transition: all 0.2s ease !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+[data-mantine-color-scheme='light'] .mantine-TextInput-input,
+[data-mantine-color-scheme='light'] .mantine-Input-input {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.mantine-TextInput-input:focus,
+.mantine-Input-input:focus {
+  border-color: rgba(99, 102, 241, 0.6) !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18) !important;
+}
+
+/* Mantine Table Studio Glass Overrides */
+.mantine-Table-table {
+  color: var(--liquid-text-primary) !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+}
+
+.mantine-Table-th {
+  color: var(--liquid-text-dimmed) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-family: var(--liquid-font-mono) !important;
+  padding: 10px 14px !important;
+  border-bottom: 1px solid var(--liquid-glass-border) !important;
+  background: rgba(10, 15, 26, 0.6) !important;
+}
+
+.mantine-Table-td {
+  padding: 10px 14px !important;
+  font-size: 0.85rem !important;
+  border-bottom: 1px solid var(--liquid-glass-border-subtle) !important;
+}
+
+.mantine-Table-tr:hover .mantine-Table-td {
+  background: rgba(99, 102, 241, 0.08) !important;
 }

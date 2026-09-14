@@ -1,0 +1,65 @@
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 36px 20px 28px 20px;
+  background: var(--liquid-glass-subtle);
+  border-radius: 20px;
+  border: 1px dashed var(--liquid-glass-border);
+  margin-top: 8px;
+}
+
+.iconOrb {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--liquid-glass-card);
+  border-top: 1.5px solid var(--liquid-glass-highlight);
+  border-left: 1px solid var(--liquid-glass-border);
+  border-right: 1px solid var(--liquid-glass-border);
+  border-bottom: 1px solid var(--liquid-glass-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--liquid-text-dimmed);
+  margin-bottom: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.emptyTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--liquid-text-primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.emptyDesc {
+  font-size: 0.85rem;
+  color: var(--liquid-text-dimmed);
+  max-width: 480px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.switchPromptBox {
+  margin-top: 8px;
+  padding: 14px 18px;
+  background: var(--liquid-glass-card);
+  border-radius: 16px;
+  border: 1px solid var(--liquid-glass-border);
+  width: 100%;
+  max-width: 540px;
+}
+
+.cleanFileNotice {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  margin-top: 4px;
+}

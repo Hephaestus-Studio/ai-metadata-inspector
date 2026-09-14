@@ -1,0 +1,107 @@
+.promptBox {
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: var(--liquid-glass-card);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--liquid-glass-border);
+  margin-top: 8px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 240px;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--liquid-glass-shadow-sm);
+  color: var(--liquid-text-primary);
+}
+
+.negativePromptBox {
+  border-color: rgba(255, 59, 48, 0.35) !important;
+  background: var(--liquid-glass-card) !important;
+  box-shadow: var(--liquid-glass-shadow-sm) !important;
+}
+
+.copyOverlayBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--liquid-glass-bg) !important;
+  border: 1px solid var(--liquid-glass-border) !important;
+  color: var(--liquid-text-primary) !important;
+  backdrop-filter: blur(12px) !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: var(--liquid-glass-shadow-sm) !important;
+}
+
+.copyOverlayBtn:hover {
+  background: var(--liquid-glass-bg-hover) !important;
+  border-color: var(--liquid-glass-border-hover) !important;
+  transform: scale(1.06);
+}
+
+.paramsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.paramCard {
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: var(--liquid-glass-card);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--liquid-glass-border);
+  box-shadow: var(--liquid-glass-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.paramCard:hover {
+  background: var(--liquid-glass-bg-hover);
+  border-color: var(--liquid-glass-border-hover);
+  transform: translateY(-2px);
+}
+
+.paramLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--liquid-text-dimmed);
+  font-family: var(--liquid-font-mono);
+  letter-spacing: 0.04em;
+}
+
+.paramValue {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-top: 4px;
+  word-break: break-all;
+  color: var(--liquid-text-primary);
+  font-family: var(--liquid-font-mono);
+}
+
+.jsonViewer {
+  padding: 14px 16px;
+  border-radius: 18px;
+  font-size: 0.82rem;
+  max-height: 320px;
+  overflow: auto;
+  background: var(--liquid-code-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--liquid-code-border);
+  color: var(--liquid-code-text);
+  box-shadow: var(--liquid-glass-shadow-sm);
+}
+
+.nodeCountBadge {
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #c084fc;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+}
