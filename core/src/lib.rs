@@ -1,3 +1,4 @@
+pub mod ai_parser;
 pub mod c2pa_parser;
 pub mod jpeg;
 pub mod png;
