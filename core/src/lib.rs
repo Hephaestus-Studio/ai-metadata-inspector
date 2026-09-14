@@ -1,6 +1,7 @@
 pub mod jpeg;
 pub mod png;
 pub mod types;
+pub mod webp;
 
 pub fn add(left: u64, right: u64) -> u64 {
     left + right
