@@ -1,0 +1,46 @@
+name: Update Changelog
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'CHANGELOG.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: 'changelog'
+  cancel-in-progress: false
+
+jobs:
+  changelog:
+    name: Update Changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 1. Update full CHANGELOG.md
+      - name: Generate Full CHANGELOG.md
+        uses: orhun/git-cliff-action@v4
+        with:
+          config: cliff.toml
+          args: --output CHANGELOG.md
+
+      # 2. Commit and push CHANGELOG.md back to main
+      - name: Commit and Push CHANGELOG.md
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          if git diff --staged --quiet; then
+            echo "CHANGELOG.md is already up-to-date."
+          else
+            git commit -m "chore(release): update CHANGELOG.md [skip ci]"
+            git push origin HEAD:main || echo "Push to main skipped or branch is protected."
+          fi
